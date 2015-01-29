@@ -1,0 +1,144 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+/* General styles for menu */
+
+body, html { font-size: 100%; 	padding: 0; margin: 0;}
+
+/* Reset */
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+body {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    color: #47a3da;
+    overflow-x: hidden;
+
+}
+
+a {
+	color: #f0f0f0;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000;
+}
+
+section { 
+	position: relative; padding-bottom: 85%; margin-top: 50px; overflow: auto; 
+	-webkit-overflow-scrolling: touch; /* iframe scrollable on iOS */
+}
+section iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 1; }
+
+
+nav { 
+	float: right;
+	width: 240px;
+	height: 100%;
+	top: 0;
+	right: -240px;
+	z-index: 10;
+	background: #529ECC;
+	position: fixed;
+	opacity: 95%;
+}
+
+nav h3 {
+	color: #afdefa;
+	font-size: 1.9em;
+	padding: 20px;
+	margin: 0;
+	font-weight: 300;
+	background: #0d77b6;
+}
+
+nav a:hover, nav a:hover small {
+	color: #1a6490;
+}
+
+nav a {
+	border-bottom: 1px solid #258ecd;
+	padding: 1em;
+	display: block;
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: 300;
+}
+
+nav a small {
+	font-size: 60%;
+	color: #97c5e0;
+	text-transform: uppercase;
+}
+
+/* hide the checkbox */
+.nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+    position: fixed;
+    top: 27px;
+    right: 27px;
+    z-index: 11;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    /*background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve' fill='#339bcb'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");*/
+    background-image: url("menu.svg");
+    //background-size: contain;
+}
+
+label:hover {
+	background-image: url("menu.svg");
+	background-position: -25px -25px;
+}
+
+.nav-trigger:checked + label {
+    right: 260px;
+}
+
+.nav-trigger:checked ~ nav {
+    right: 0px;
+    
+}
+
+
+/* Transitions */
+ 
+.nav-trigger + label, nav {
+    -webkit-transition: right 0.3s ease;
+    -moz-transition: right 0.3s ease;
+    transition: right 0.3s ease;
+}
+
+/* Media Queries */
+@media screen and (max-width: 55.1875em) {
+
+}
+
+@media screen and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) { /* iPhone 6 */
+
+	section { margin-right: 2em; }
+
+}
+
+
+
